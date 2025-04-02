@@ -627,10 +627,6 @@ class PageManager {
                     startEffectBackground.style.zIndex = "-1";
                     this.gameManager.start();
                     this.setCanOperate(true);
-                    setInterval(() => {
-                        this.gameManager.attackFrom(1, 10);
-                        this.gameManager.mondOperators[1].put();
-                    }, 15000);
                 }
             };
         };
