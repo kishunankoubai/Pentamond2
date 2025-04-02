@@ -1,0 +1,129 @@
+.fadein {
+    animation-direction: normal;
+    animation-duration: 175ms;
+    animation-name: fadein;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.fadeout {
+    animation-direction: normal;
+    animation-duration: 175ms;
+    animation-name: fadeout;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.subPageFadein {
+    animation-direction: normal;
+    animation-duration: 175ms;
+    animation-name: subPageFadein;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.subPageFadeout {
+    animation-direction: normal;
+    animation-duration: 175ms;
+    animation-name: subPageFadeout;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    0% {
+        transform: translate(-50%, -48%);
+        opacity: 0;
+        display: flex;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        /* transform: translate(-50%, -48%); */
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes subPageFadein {
+    0% {
+        transform: translate(0, 5%);
+        opacity: 0;
+        display: flex;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes subPageFadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 5%);
+        opacity: 0;
+        display: none;
+    }
+}
+
+.button {
+    transition-duration: 80ms;
+    transition-property: background-color, border;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.button:hover {
+    transition-duration: 250ms;
+    transition-property: background-color, border;
+}
+
+.button:active {
+    transition-duration: 20ms;
+    transition-property: background-color, border;
+}
+
+.startEffectAnimation {
+    animation-direction: normal;
+    animation-duration: 500ms;
+    animation-name: startEffectAnimation;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes startEffectAnimation {
+    0% {
+        rotate: -10deg;
+        transform: perspective(1000px) translate3d(0, -5%, 500px);
+        opacity: 0;
+    }
+    30% {
+        rotate: 0deg;
+        transform: perspective(1000px) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    60% {
+        rotate: 0deg;
+        transform: perspective(1000px) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(1000px) translate3d(0, 5%, -1000px);
+        rotate: 270deg;
+        opacity: 0;
+    }
+}
+
+#startEffectBackground {
+    transition-duration: 250ms;
+    transition-property: background-color, border;
+    animation-timing-function: ease-in-out;
+}

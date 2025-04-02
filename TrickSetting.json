@@ -1,0 +1,76 @@
+{
+
+    "0" : {
+        "trickName" : "一列揃え(上)",
+        "point" : 10,
+        "attack" : 5,
+        "contents" : [[true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true]]
+    },
+    "1" : {
+        "trickName" : "一列揃え(下)",
+        "point" : 10,
+        "attack" : 5,
+        "contents" : [[true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false]]
+    },
+    "2" : {
+        "trickName" : "地割れ(上)",
+        "point" : 14,
+        "attack" : 7,
+        "contents" : [[true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [false, true], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false]]
+    },
+    "3" : {
+        "trickName" : "地割れ(下)",
+        "point" : 14,
+        "attack" : 7,
+        "contents" : [[true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [false, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true]]
+    },
+    "4" : {
+        "trickName" : "地殻変動(上)",
+        "point" : 16,
+        "attack" : 8,
+        "contents" : [[true, true], [true, false], [true, true], [true, false], [true, true], [true, false], [false, true], [false, false], [false, true], [false, true], [false, false], [true, true], [true, false], [true, true], [true, false], [true, true], [true, false]]
+    },
+    "5" : {
+        "trickName" : "地殻変動(下)",
+        "point" : 16,
+        "attack" : 8,
+        "contents" : [[true, false], [true, true], [true, false], [true, true], [true, false], [true, true], [false, false], [false, true], [false, true], [false, false], [false, true], [true, false], [true, true], [true, false], [true, true], [true, false], [true, true]]
+    },
+    "6" : {
+        "trickName" : "トゲトゲ(上)",
+        "point" : 30,
+        "attack" : 20,
+        "contents" : [[true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true], [false, false], [true, true]]
+    },
+    "7" : {
+        "trickName" : "トゲトゲ(下)",
+        "point" : 30,
+        "attack" : 20,
+        "contents" : [[true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false], [false, true], [true, false]]
+    },
+    "8" : {
+        "trickName" : "牙(上)",
+        "point" : 50,
+        "attack" : 40,
+        "contents" : [[true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true]]
+    },
+    "9" : {
+        "trickName" : "牙(下)",
+        "point" : 50,
+        "attack" : 40,
+        "contents" : [[true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false], [false, false], [true, true], [false, true], [true, false]]
+    },
+    "10" : {
+        "trickName" : "三つ子山",
+        "point" : 15,
+        "attack" : 10,
+        "contents" : [[true, true], [true, false], [true, true], [true, false], [true, true], [false, false], [true, true], [true, false], [true, true], [true, false], [true, true], [false, false], [true, true], [true, false], [true, true], [true, false], [true, true]]
+    },
+    "11" : {
+        "trickName" : "五人囃子",
+        "point" : 30,
+        "attack" : 15,
+        "contents" : [[true, false], [true, true], [false, false], [true, true], [true, false], [true, true], [false, false], [true, true], [true, false], [true, true], [false, false], [true, true], [true, false], [true, true], [false, false], [true, true], [true, false]]
+    }
+
+}

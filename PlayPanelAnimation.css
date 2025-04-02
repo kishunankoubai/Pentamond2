@@ -1,0 +1,73 @@
+.preparingDamageAnimation{
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-name: preparingDamageBlinking;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.waitingDamageAnimation{
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-name: waitingDamageBlinking;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.crushAnimation{
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-name: crush;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.dangerousAnimation{
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-name: dangerousBlinking;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.shakeAnimation{
+    animation-direction: alternate;
+    animation-duration: 80ms;
+    animation-name: shake;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes preparingDamageBlinking{
+    50%{
+        background-color: rgb(255, 255, 136);
+        border-color: rgb(255, 229, 101);
+    }
+}
+
+@keyframes waitingDamageBlinking{
+    50%{
+         background-color: lightcoral;
+         border-color: rgb(205, 93, 93);
+    }
+}
+
+@keyframes crush{
+    100%{
+        opacity: 0;
+        margin-top: 30%;
+        rotate: 30deg;
+    }
+}
+
+@keyframes dangerousBlinking{
+    50%{
+        background-color: rgb(64, 0, 0);
+   }
+}
+
+@keyframes shake{
+    15%{
+        margin-top: 3%;
+    }
+}

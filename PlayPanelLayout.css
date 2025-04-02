@@ -1,0 +1,67 @@
+.playPanel{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-right: 2vw;
+}
+
+.playPanel *{
+    color: #111111;
+}
+
+.playFieldBase{
+    height: 100%;
+    aspect-ratio: 9 / 17.75;
+    margin-left: 2%;
+}
+
+.mondInfoPanel{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2%;
+}
+
+.nextInfoPanel{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    order: 2;
+}
+
+.holdInfoPanel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    order: 1;
+    margin-bottom: 20%;
+}
+
+.nextPanel{
+    margin-bottom: 5%;
+}
+
+
+.mondPanelCanvasLayerBase{
+    height: 80%;
+    width: 80%;
+}
+
+.mondPanel{
+    width: 100%;
+    aspect-ratio: 2 / 1.732;
+    order: 2;
+}
+
+.mondInfoLabel{
+    align-self: stretch;
+    text-align: center;
+    order: 1;
+}

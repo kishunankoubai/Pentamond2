@@ -1,0 +1,183 @@
+.gameInfoPanel{
+    height: 100%;
+    aspect-ratio: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.gameInfoLabel{
+    height: 13%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    align-self: stretch;
+    text-align: center;
+    padding: 0;
+}
+
+.countDownTimePanel{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    aspect-ratio: 1.5 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 255, 201);
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+}
+
+.countDownTimeInnerPanel{
+    width: 80%;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+}
+
+.countUpTimePanel{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 255, 201);
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+}
+
+.countUpTimeInnerPanel{
+    width: 80%;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+}
+
+.linePanel{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 255, 201);
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+}
+
+.lineInnerPanel{
+    width: 80%;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+}
+
+.trickInfoPanel{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 255, 201);
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+}
+
+.trickInfoInnerPanel{
+    width: 80%;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+}
+
+.scorePanel{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 255, 201);
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+}
+
+.scoreInnerPanel{
+    width: 80%;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+    /* background-color:rgb(226, 220, 255);
+    border-top: 0px solid rgb(192, 180, 255);
+    border-bottom: 3px solid rgb(192, 180, 255);
+    border-left: 1px solid rgb(192, 180, 255);
+    border-right: 1px solid rgb(192, 180, 255); */
+}
+
+#gameInfoPanelModel{
+    height: 80%;
+    aspect-ratio: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10%;
+}

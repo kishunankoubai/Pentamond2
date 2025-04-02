@@ -1,0 +1,271 @@
+.page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+.subPage {
+    height: 80%;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
+.label {
+    height: 15%;
+    align-self: stretch;
+    text-align: center;
+}
+
+.headingLabel {
+    height: 100%;
+    text-align: left;
+    margin-left: 10%;
+    color: #555555;
+}
+
+.headingPanel {
+    height: 30%;
+    width: calc(100% - 2px);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    background-color: rgba(255, 165, 0, 0.1);
+    border-top: 0px solid rgba(194, 126, 0, 0.1);
+    border-bottom: 3px solid rgba(194, 126, 0, 0.1);
+    border-left: 1px solid rgba(194, 126, 0, 0.1);
+    border-right: 1px solid rgba(194, 126, 0, 0.1);
+}
+
+.text {
+    height: 100%;
+    text-align: left;
+    color: #111111;
+}
+
+.button {
+    height: 20%;
+    margin: 0;
+    margin-left: 3%;
+    margin-right: 3%;
+    aspect-ratio: 3.5 / 1;
+    background-color: lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+    outline: none;
+}
+
+.button:hover {
+    background-color: beige;
+    border-top: 0px solid burlywood;
+    border-bottom: 3px solid burlywood;
+    border-left: 1px solid burlywood;
+    border-right: 1px solid burlywood;
+}
+
+.button:active {
+    /* linear-gradient(20deg, lightGray 60%, rgb(239, 239, 239) ); */
+    background-color: beige;
+    border-top: 0px solid burlywood;
+    border-bottom: 0px solid burlywood;
+    border-left: 0px solid burlywood;
+    border-right: 0px solid burlywood;
+}
+
+.button:focus-visible {
+    border-top: 0px solid lightblue;
+    border-bottom: 0px solid lightblue;
+    border-left: 0px solid lightblue;
+    border-right: 0px solid lightblue;
+}
+
+.littleButton {
+    height: 20%;
+    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    aspect-ratio: 2.5 / 1;
+}
+
+.returnButton {
+    height: 70%;
+    margin: 3%;
+    margin-top: 1%;
+    margin-left: auto;
+    aspect-ratio: 2 / 1;
+}
+
+.prevSubPageButton {
+    height: 70%;
+    margin: 0;
+    margin-left: 15%;
+    margin-right: auto;
+    aspect-ratio: 2 / 1;
+}
+
+.nextSubPageButton {
+    height: 70%;
+    margin: 0;
+    margin-right: 15%;
+    margin-left: auto;
+    aspect-ratio: 2 / 1;
+}
+
+.subPageLabel {
+    height: 100%;
+}
+
+.selectPanel {
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.returnPanel {
+    height: 25%;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
+.selector {
+    width: 80%;
+    border: 1px solid black;
+    aspect-ratio: 3 / 1;
+    text-align: center;
+    background-color: rgb(180, 255, 255);
+    border-top: 0px solid rgb(147, 228, 255);
+    border-bottom: 3px solid rgb(147, 228, 255);
+    border-left: 1px solid rgb(147, 228, 255);
+    border-right: 1px solid rgb(147, 228, 255);
+    outline: none;
+}
+
+.selector option {
+    background-color: lightcyan;
+}
+
+.selector:focus-visible {
+    border-top: 0px solid rgb(147, 228, 255);
+    border-bottom: 0px solid rgb(147, 228, 255);
+    border-left: 0px solid rgb(147, 228, 255);
+    border-right: 0px solid rgb(147, 228, 255);
+}
+
+.selectorPanel {
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+    background-color: lightcyan;
+    border-top: 0px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-right: 1px solid lightblue;
+}
+
+.playBgmSelectorPanel {
+    aspect-ratio: 2 / 1;
+}
+
+.subPageControler {
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    margin-top: auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.trickPanel {
+    height: 25%;
+    aspect-ratio: 9 / 0.866;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timeSelectorPanel {
+    height: 80%;
+    aspect-ratio: 1 / 1;
+}
+
+#title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#titleLabel {
+    height: 50%;
+    color: #444444;
+}
+
+#titleButton {
+    height: 15%;
+}
+
+#playStartButton {
+    height: 25%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#playBase {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+#resultLabel {
+    color: #444444;
+    margin-top: 3%;
+}
+
+.controlerIllust {
+    height: 100%;
+    width: 40%;
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#controlerType1Illust {
+    background-image: url("Images/コントローラータイプ1.png");
+}
+
+#controlerType2Illust {
+    background-image: url("Images/コントローラータイプ2.png");
+}
+
+#controlerType3Illust {
+    background-image: url("Images/コントローラータイプ3.png");
+}

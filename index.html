@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+<html lang = "ja">
+    
+    <head>
+        
+        <meta charset = "UTF-8">
+        <title>Pentamond</title>
+        
+        <link rel = "stylesheet" href = "PlayFieldLayout.css">
+        <link rel = "stylesheet" href = "PlayPanelLayout.css">
+        <link rel = "stylesheet" href = "GameInfoPanelLayout.css">
+        <link rel = "stylesheet" href = "PageLayout.css">
+        <link rel = "stylesheet" href = "PentamondLayout.css">
+        <link rel = "stylesheet" href = "PlayPanelAnimation.css">
+        <link rel = "stylesheet" href = "PageAnimation.css">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c">
+    </head>
+    
+    <body>
+
+        <div id = "pentamondBase">
+
+            <div id = "pentamondBackground"></div>
+
+            <div id = "waitPanel"></div>
+            <div id = "startEffectPanel"></div>
+            <div id = "startEffectBackground"></div>
+
+            <div id = "title" class = "page">
+                <div id = "titleLabel" class = "label" data-size = "3">Pentamond</div>
+                <button id = "titleButton" class = "button">START</button>
+            </div>
+
+            <div id = "modeSelect" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">モード選択</div>
+                </div>
+                <div class = "selectPanel">
+                    <!-- <button id = "tutorialButton" class = "button">チュートリアル</button> -->
+                    <button id = "soloButton" class = "button">ソロ</button>
+                    <button id = "multiButton" class = "button">マルチ</button>
+                    <button id = "helpButton" class = "button">ヘルプ</button>
+                    <button id = "settingButton" class = "button">設定</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "soloModeSelect" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">ソロモード選択</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "survivalButton" class = "button">サバイバル</button>
+                    <button id = "lineCharangeButton" class = "button">十五列揃え</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "multiModeSelect" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">マルチモード選択</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "versusButton" class = "button">サバイバル</button>
+                    <button id = "versusLineCharangeButton" class = "button">十五列揃え</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "numberOfPlayerSelect" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">プレイヤー人数</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "2peopleButton" class = "button">2人</button>
+                    <button id = "3peopleButton" class = "button">3人</button>
+                    <button id = "4peopleButton" class = "button">4人</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "controlerAlert" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">コントローラーを接続してください</div>
+                </div>
+                <div class = "selectPanel">
+                    <div class = "text" text-align = "left">
+                        選択したプレイ人数に対し、接続されているコントローラーの数が不足しています<br></br>
+                        接続しているコントローラーの数が足りているかをお確かめください<br></br>
+                        足りているのにもかかわらずこの画面が表示された場合、いずれかのコントローラーの<br></br>
+                        ボタンを押すと認識される場合があります
+                    </div>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "preparePlay" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">プレイ準備</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "playStartButton" class = "button">START</button>
+                    <button id = "playSettingButton" class = "button">プレイ設定</button>
+                    <button id = "ToTrickDisplayFromPreparePlayButton" class = "button">役一覧</button>
+                    <button id = "modeDescriptionButton" class = "button">モード説明</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "playSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">プレイ設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "handicapButton" class = "button">ハンデ</button>
+                    <button id = "controlerButton" class = "button">コントローラー</button>
+                    <button id = "timeSettingButton" class = "button">時間設定</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "handicapSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">ハンデ設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <div class = "selectorPanel handicapSelectorPanel" data-index = "1">
+                        <div class = "label">Player1</div>
+                        <select class = "selector handicapSelector" data-index = "1">
+                            <option value = "1" selected>1</option>
+                            <option value = "1.1">1.1</option>
+                            <option value = "1.2">1.2</option>
+                            <option value = "1.3">1.3</option>
+                            <option value = "1.5">1.5</option>
+                            <option value = "1.8">1.8</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+                    <div class = "selectorPanel handicapSelectorPanel" data-index = "2">
+                        <div class = "label">Player2</div>
+                        <select class = "selector handicapSelector" data-index = "2">
+                            <option value = "1" selected>1</option>
+                            <option value = "1.1">1.1</option>
+                            <option value = "1.2">1.2</option>
+                            <option value = "1.3">1.3</option>
+                            <option value = "1.5">1.5</option>
+                            <option value = "1.8">1.8</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+                    <div class = "selectorPanel handicapSelectorPanel" data-index = "3">
+                        <div class = "label">Player3</div>
+                        <select class = "selector handicapSelector" data-index = "3">
+                            <option value = "1" selected>1</option>
+                            <option value = "1.1">1.1</option>
+                            <option value = "1.2">1.2</option>
+                            <option value = "1.3">1.3</option>
+                            <option value = "1.5">1.5</option>
+                            <option value = "1.8">1.8</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+                    <div class = "selectorPanel handicapSelectorPanel" data-index = "4">
+                        <div class = "label">Player4</div>
+                        <select class = "selector handicapSelector" data-index = "4">
+                            <option value = "1" selected>1</option>
+                            <option value = "1.1">1.1</option>
+                            <option value = "1.2">1.2</option>
+                            <option value = "1.3">1.3</option>
+                            <option value = "1.5">1.5</option>
+                            <option value = "1.8">1.8</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "controlerSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">コントローラー設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <div class = "selectorPanel controlerSelectorPanel" data-index = "1">
+                        <div class = "label">Player1</div>
+                        <select class = "selector controlerSelector" data-index = "1">
+                            <option value = "1">タイプ1</option>
+                            <option value = "2">タイプ2</option>
+                            <option value = "3">タイプ3</option>
+                        </select>
+                    </div>
+
+                    <div class = "selectorPanel controlerSelectorPanel" data-index = "2">
+                        <div class = "label">Player2</div>
+                        <select class = "selector controlerSelector" data-index = "2">
+                            <option value = "1">タイプ1</option>
+                            <option value = "2">タイプ2</option>
+                            <option value = "3">タイプ3</option>
+                        </select>
+                    </div>
+
+                    <div class = "selectorPanel controlerSelectorPanel" data-index = "3">
+                        <div class = "label">Player3</div>
+                        <select class = "selector controlerSelector" data-index = "3">
+                            <option value = "1">タイプ1</option>
+                            <option value = "2">タイプ2</option>
+                            <option value = "3">タイプ3</option>
+                        </select>
+                    </div>
+
+                    <div class = "selectorPanel controlerSelectorPanel" data-index = "4">
+                        <div class = "label">Player4</div>
+                        <select class = "selector controlerSelector" data-index = "4">
+                            <option value = "1">タイプ1</option>
+                            <option value = "2">タイプ2</option>
+                            <option value = "3">タイプ3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "timeSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">時間設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <div id = timeSelectorPanel class = "selectorPanel" data-index = "1">
+                        <div class = "label" data-size = "1.5">持ち時間</div>
+                        <select id = timeSelector class = "selector" data-size = "1.5" data-index = "1">
+                            <option value = "100">短い(100)</option>
+                            <option value = "300" selected>普通(300)</option>
+                            <option value = "500">長い(500)</option>
+                            <option value = "1000">超長い(1000)</option>
+                            <option value = "Infinity">無限</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "trickDisplay" class = "page subPageParent" data-maxPage = "1">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">役一覧</div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+
+            <div id = "pause" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">ポーズ</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "reopeningButton" class = "button">再開する</button>
+                    <button id = "restartButton" class = "button">やり直す</button>
+                    <button id = "ToPreparePlayFromPauseButton" class = "button">プレイ準備へ</button>
+                    <button id = "ToTitleFromPauseButton" class = "button">タイトルへ</button>
+                </div>
+            </div>
+
+            <div id = "result" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">最終結果</div>
+                </div>
+                <div id = "resultLabel" class = "label" data-size = "2.5"></div>
+                <div class = "selectPanel">
+                    <button id = "retryButton" class = "littleButton button">もういちど</button>
+                    <button id = "ToPreparePlayFromResultButton" class = "littleButton button">プレイ準備へ</button>
+                    <button id = "ToMultiModeSelectButton" class = "littleButton button">モード選択へ</button>
+                    <button id = "detailResultButton" class = "littleButton button">詳細結果</button>
+                    <button id = "ToTitleFromResultButton" class = "button">タイトルへ</button>
+                </div>
+            </div>
+
+            <div id = "detailResult" class = "page subPageParent" data-maxPage = "4">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">詳細結果</div>
+                </div>
+                <div class = "subPage detailResultSubPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left" data-index = "1">
+                        </div>
+                        <div class = "text" text-align = "left" data-index = "2">
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage detailResultSubPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left" data-index = "1">
+                        </div>
+                        <div class = "text" text-align = "left" data-index = "2">
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage detailResultSubPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left" data-index = "1">
+                        </div>
+                        <div class = "text" text-align = "left" data-index = "2">
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage detailResultSubPage" data-index = "4">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left" data-index = "1">
+                        </div>
+                        <div class = "text" text-align = "left" data-index = "2">
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "help" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">ヘルプ</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "howToPlayButton" class = "button">遊び方</button>
+                    <button id = "ToTrickDisplayFromHelpButton" class = "button">役一覧</button>
+                    <button id = "howToOperateButton" class = "button">操作方法</button>
+                    <button id = "functionDescriptionButton" class = "button">機能説明</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToPlay" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">遊び方</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "howToPlayBasicButton" class = "button">基本編</button>
+                    <button id = "howToPlayAdvancedButton" class = "button">応用編</button>
+                    <button id = "howToPlaySoloModeButton" class = "button">ソロモード編</button>
+                    <button id = "howToPlayMultiModeButton" class = "button">マルチモード編</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToPlayBasic" class = "page subPageParent" data-maxPage = "7">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">基本編</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ここでは、Pentamondの基本的な遊び方を説明します
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            Pentamondは、盤面の上に出現するブロック（モンドという）を操作して、<br>
+                            どんどん積み上げていくゲームです<br>
+                            モンドは左右に移動したり、回転したりすることができます<br></br>
+                            モンドは下に移動させることもできます<br>
+                            真下に移動できないときには斜め下に移動する、"<b>滑り移動</b>"をすることができます<br>
+                            （ただし、これらの移動により設置されることはありません）
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            今操作しているモンドの下には影（ゴーストという）が表示されます<br>
+                            モンドを"<b>設置</b>"すると、このゴーストの位置に設置されます<br></br>
+                            モンドを設置すると、盤面の上に新しく次のモンドが出現します<br>
+                            それを操作して、設置するとさらに新しいモンドが出現します<br>
+                            これを繰り返すことで、自由にモンドを積み上げることができます
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "4">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            しかし、ただ積み上げても意味はありません<br>
+                            Pentamondでは、モンドを使って、"<b>役</b>"という決まった形を作ると<br>
+                            たくさんのスコアが貰えたり、相手に攻撃できたり……<br>
+                            いいことがたくさんあるので、どんどん役を揃えていきましょう<br></br>
+                            役は一列ごとに判定されます<br>
+                            役の形はモード選択→ヘルプ→役一覧などから確認できます<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "5">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            "<b>消去</b>"を行うと、盤面の一番下の列を消すことができます<br>
+                            揃えたブロックの形が役として認められるにはその役を消去する必要があります<br>
+                            役が成立している列を連続して消去するとChainというボーナスが貰えます<br>
+                            モンドをたくさん積み上げて一気に消すとより高いスコアを目指すことができます
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "6">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            Pentamondの基本的なモードでは制限時間があります<br>
+                            この残り時間がなくなるとゲームオーバーです<br>
+                            ただし、役を揃えることで残り時間を回復することができます<br>
+                            消去はいつでも行うことができますが、役が成立していない列を連続して<br>
+                            消去すると残り時間が減らされてしまうので注意しましょう
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "7">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            まとめとしては、モンドを操作して役を揃えそれを消去するゲームです<br></br>
+                            もっと詳しく知りたい場合は応用編をご覧ください<br>
+                            各モードの遊び方についてはソロモード編、マルチモード編をご覧ください<br>
+                            モンドの操作、設置、消去などの操作方法については<br>
+                            モード選択→ヘルプ→操作方法をご覧ください
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToPlayAdvanced" class = "page subPageParent" data-maxPage = "9">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">応用編</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ここでは、基本編では説明していなかった<br>
+                            詳しい内容について個別に説明します<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ネクストについて<br>
+                            盤面の右にNEXTと書かれたパネルを見ると、<br>
+                            次に何が出現するかを確認することができます<br>
+                            モンドは全六種類で、六種類を一セットとして出現します<br>
+                            次のモンドを確認しながらプレイすると、スコアが上がるかもしれませんね
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ホールドについて<br>
+                            今、このモンドは来てほしくなかった、どうしよう<br>
+                            そんなとき、"<b>ホールド</b>"をしましょう<br>
+                            現在のモンドを一回持っておいて、次のモンドを操作することができます<br>
+                            持っているモンドは右上のHOLDと書いてあるパネルに表示されます<br>
+                            すでにモンドを持っている場合、ホールドを行うと出現しているモンドと入れ替えます<br></br>
+                            ホールドは何回でも行えるので、ホールドを二回することで<br>
+                            操作しているモンドの位置をリセットすることができます
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "4">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            一手戻しについて<br>
+                            モンドを間違えて設置してしまった、どうしよう<br>
+                            そんなとき、"<b>一手戻し</b>"をしましょう<br>
+                            一手までなら置いたことをなかったことにできます<br>
+                            ただし、制限時間があるモードでは残り時間を減らされてしまいます<br>
+                            使いどころには気を付けましょう<br>
+                            消去をしてしまうと戻すことができなくなってしまうことにも注意しましょう<br></br>
+                            ホールドと組み合わせるとピンチを切り抜けられるかも……？
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "5">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            一見置くことができないモンドについて<br>
+                            実はモンドは滑らかに移動しているわけではありません<br>
+                            モンドが移動できるかどうかは移動先が空いているかどうかで決まります<br>
+                            なので、入り組んだ地形で一見入らないように見えたとしても<br>
+                            一つ一つの移動先が空いているなら入ることがあります<br>
+                            滑り移動ができないかいろいろ試してみましょう<br>
+                            一部の地形は回転と組み合わせると入ることがあるとか……
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "6">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            モンドが出現しないことについて<br>
+                            プレイしていたら、モンドが出現しないことがあります<br>
+                            これは、決められた出現位置にモンドが出現できないからです<br>
+                            モンドが出現していない場合消去と一手戻し以外の操作はできません<br>
+                            消去か一手戻しによって出現できるようになると改めて出現します<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "7">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            攻撃について<br>
+                            対戦するモードでは、役を揃えると他プレイヤーに攻撃することができます<br>
+                            役の成立後初めての設置の時点で攻撃が発生し、攻撃を受けたプレイヤーの枠が<br>
+                            黄色く点滅し、三秒経つと色が赤に変わります<br>
+                            枠が赤く点滅している状態で初めて設置するとダメージ処理が実行されます<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "8">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ダメージ処理について<br>
+                            ダメージ処理ではダメージの分だけ上から"<b>じゃまモンド</b>"が降ってきて、<br>
+                            設置したモンドが破壊されてしまいます<br>
+                            モンドを破壊しなかったじゃまモンドが盤面の一番下まで着いた場合は<br>
+                            Timeを1減らされてしまいます<br>
+                            ダメージ処理までに攻撃することでダメージを相殺することができます<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "9">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            滑り移動の左優先について<br>
+                            滑り移動は真下に移動できなくて、かつ斜め下が空いているときに行えます<br>
+                            斜め下のうち左側と右側の片方だけ空いている場合はそちらに滑り移動できます<br>
+                            左右両方の斜め下が空いている場合、必ず左側が優先されます<br>
+                            つまり、右側に滑り移動するには真下と左斜め下がともに空いていない必要があります
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToPlaySoloMode" class = "page subPageParent" data-maxPage = "3">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">ソロモード編</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ここでは、ソロで遊ぶことができるゲームモードの<br>
+                            内容について説明します<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            サバイバルについて<br>
+                            Pentamondの基本的なモードです<br>
+                            時間が無くなるまで役を作り続けるスコアアタックです<br>
+                            どれだけ長い間プレイできるかをチャレンジすることもできます<br>
+                            スコアやプレイ時間は最終結果→詳細結果から確認できます<br>
+                            このモードでは連続した役が成立しない消去や一手戻しによるペナルティがあります
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            十五列揃えについて<br>
+                            役のうち、一列揃え（上）か一列揃え（下）を十五回成立させるまでの<br>
+                            タイムアタックです<br>
+                            このモードでは連続した役が成立しない消去や一手戻しによるペナルティはありません<br>
+                            できるだけ早く一列揃えをしましょう<br></br>
+                            ちなみに作者の最速は63.44です
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToPlayMultiMode" class = "page subPageParent" data-maxPage = "3">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">マルチモード編</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ここでは、マルチで遊ぶことができるゲームモードの<br>
+                            内容について説明します<br>
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            サバイバルについて<br>
+                            Pentamondの基本的な対戦モードです<br>
+                            時間が0になるとゲームオーバーになり、最も長く生き残ったプレイヤーが勝者となります<br>
+                            役を成立させると攻撃ができ、自分以外を妨害することができます<br>
+                            戦況に応じて使う役を使い分けましょう<br>
+                            このモードでは連続した役が成立しない消去や一手戻しによるペナルティがあります
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            十五列揃えについて<br>
+                            役のうち、一列揃え（上）か一列揃え（下）を十五回成立させるまでの<br>
+                            タイムアタックです<br>
+                            みんなで一斉に始めて、最も速く成功した人が勝者です<br>
+                            このモードでは連続した役が成立しない消去や一手戻しによるペナルティはありません
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "howToOperate" class = "page subPageParent" data-maxPage = "4">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">操作方法</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            キーボードの操作方法<br>
+                            ← →……左右移動<br>
+                            ↓……下移動/滑り移動<br>
+                            ↑……設置<br>
+                            C……左回転　　V……右回転<br>
+                            B……一手戻し<br>
+                            Space……ホールド<br>
+                            Enter……列の消去<br>
+                            P……ポーズ
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            コントローラータイプ1の操作方法<br>
+                            設定→プレイ設定→コントローラー設定から選択できます
+                        </div>
+                        <div id = "controlerType1Illust" class = "controlerIllust"></div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            コントローラータイプ2の操作方法<br>
+                            設定→プレイ設定→コントローラー設定から選択できます
+                        </div>
+                        <div id = "controlerType2Illust" class = "controlerIllust"></div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "4">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            コントローラータイプ3の操作方法<br>
+                            設定→プレイ設定→コントローラー設定から選択できます
+                        </div>
+                        <div id = "controlerType3Illust" class = "controlerIllust"></div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "functionDescription" class = "page subPageParent" data-maxPage = "5">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">機能説明</div>
+                </div>
+                <div class = "subPage" data-index = "1">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            ここでは、このゲームの機能に関する説明や、<br>
+                            分かりにくい仕様の紹介などを行います
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "2">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            設定→プレイ設定→ハンデ設定について<br>
+                            持ち時間制の対戦におけるハンデを設定することができます<br>
+                            設定したハンデの数字が大きければ大きいほど有利になります<br>
+                            実力差がある相手との対戦で使うと便利です<br>
+                            全員がハンデの数字を大きくするとより激しい戦いになるかも？
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "3">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            設定→プレイ設定→時間設定について<br>
+                            持ち時間があるモードでの持ち時間を変更できます<br>
+                            気分によって遊び方を変えられますね<br>
+                            無限に設定した場合は持ち時間がなくなることはありません<br>
+                            攻撃をたくさんしても死なないので練習に使うことができます<br>
+                            終了したい場合はポーズ画面から終了できます
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPage" data-index = "4">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            コントローラーについてその1<br>
+                            コントローラーは接続すると1Pから割り当てられます<br>
+                            つまり、2人プレイする場合はコントローラーは2つ必要となります<br>
+                            その場合、Player1はキーボードでもコントローラーでも操作できます<br>
+                            <br>
+                            現状、どのコントローラーが何番目のPlayerか知るには<br>
+                            プレイで操作してみるしかありません<br>
+                            一度STARTをして、どれが自分かを確認してから再度STARTしてください
+                        </div>
+                    </div>
+                </div>
+                    <div class = "subPage" data-index = "5">
+                    <div class = "selectPanel">
+                        <div class = "text" text-align = "left">
+                            コントローラーについてその2<br>
+                            コントローラーはプレイをSTARTする前までに接続してください<br>
+                            コントローラーの操作タイプが反映されない場合があります<br>
+                            コントローラーがパソコンに接続されていても<br>
+                            何かボタンを押すまでは認識されないので、<br>
+                            ページを開いたら一度ボタンを押しておきましょう
+                        </div>
+                    </div>
+                </div>
+                <div class = "subPageControler">
+                    <button class = "prevSubPageButton button">前へ</button>
+                    <div class = "label subPageLabel" data-size = "1.5"></div>
+                    <button class = "nextSubPageButton button">次へ</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "setting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "ToPlaySettingButton" class = "button">プレイ設定</button>
+                    <button id = "musicSettingButton" class = "button">音楽設定</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "musicSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">音楽設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <button id = "volumeSettingButton" class = "button">音量設定</button>
+                    <button id = "playBgmSettingButton" class = "button">プレイ時BGM</button>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "volumeSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">音量設定</div>
+                </div>
+                <div class = "selectPanel">
+                    <div class = "selectorPanel" data-index = "1">
+                        <div class = "label">BGM音量</div>
+                        <select class = "selector musicSettingSelector" data-index = "1">
+                            <option value = "0">0</option>
+                            <option value = "0.175">1</option>
+                            <option value = "0.35">2</option>
+                            <option value = "0.5">3</option>
+                            <option value = "0.75">4</option>
+                            <option value = "1" selected>5</option>
+                        </select>
+                    </div>
+                    <div class = "selectorPanel" data-index = "2">
+                        <div class = "label">SE音量</div>
+                        <select class = "selector musicSettingSelector" data-index = "2">
+                            <option value = "0">0</option>
+                            <option value = "0.175">1</option>
+                            <option value = "0.35">2</option>
+                            <option value = "0.5">3</option>
+                            <option value = "0.75">4</option>
+                            <option value = "1" selected>5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+            <div id = "playBgmSetting" class = "page">
+                <div class = "headingPanel">
+                    <div class = "label headingLabel">プレイ時BGM</div>
+                </div>
+                <div class = "selectPanel">
+                    <div class = "selectorPanel playBgmSelectorPanel" data-index = "1">
+                        <div class = "label">ソロ</div>
+                        <select class = "selector playBgmSelector" data-index = "1">
+                            <option value = "0">なし</option>
+                            <option value = "1" selected>ならべてトライアングル</option>
+                            <option value = "2">さよならさんかく</option>
+                            <option value = "3">つみきのおしろ</option>
+                            <option value = "4">Top of the Pyramid</option>
+                            <option value = "5">おかたづけ</option>
+                        </select>
+                    </div>
+                    <div class = "selectorPanel playBgmSelectorPanel" data-index = "2">
+                        <div class = "label">マルチ</div>
+                        <select class = "selector playBgmSelector" data-index = "2">
+                            <option value = "0">なし</option>
+                            <option value = "1">ならべてトライアングル</option>
+                            <option value = "2">さよならさんかく</option>
+                            <option value = "3">つみきのおしろ</option>
+                            <option value = "4" selected>Top of the Pyramid</option>
+                            <option value = "5">おかたづけ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "returnPanel">
+                    <button class = "returnButton button">戻る</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id = "gameInfoPanelModel" style = "display: none;">
+            <div class = "countDownTimePanel">
+                <div class = "gameInfoLabel" data-size = "0.8">
+                    TIME
+                </div>
+                <div class = "countDownTimeInnerPanel">
+                    <div class = "gameInfoLabel" data-size = "1.4">
+                        <b>500</b>
+                    </div>
+                </div>
+            </div>
+            <div class = "countUpTimePanel">
+                <div class = "gameInfoLabel" data-size = "0.8">
+                    TIME
+                </div>
+                <div class = "countUpTimeInnerPanel">
+                    <div class = "gameInfoLabel" data-size = "0.8">
+                        <b>20.0</b>
+                    </div>
+                </div>
+            </div>
+            <div class = "linePanel">
+                <div class = "gameInfoLabel" data-size = "0.8">
+                    LINE
+                </div>
+                <div class = "lineInnerPanel">
+                    <div class = "gameInfoLabel" data-size = "0.8">
+                        <b>0</b>
+                    </div>
+                </div>
+            </div>
+            <div class = "trickInfoPanel">
+                <div class = "gameInfoLabel" data-size = "0.8">
+                    TRICK
+                </div>
+                <div class = "trickInfoInnerPanel">
+                    <div class = "gameInfoLabel" data-size = "0.5">
+                        <b>一列揃え</b>
+                    </div>
+                </div>
+            </div>
+            <div class = "scorePanel">
+                <div class = "gameInfoLabel" data-size = "0.8">
+                    SCORE
+                </div>
+                <div class = "scoreInnerPanel">
+                    <div class = "gameInfoLabel" data-size = "0.8">
+                        <b>0</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src = "Block.js"></script>
+        <script src = "BlockManager.js"></script>
+        <script src = "NuisanceBlockManager.js"></script>             
+        <script src = "Monoiamond.js"></script>
+        <script src = "Pentiamond.js"></script>
+        <script src = "PlayField.js"></script>
+        <script src = "MondOperator.js"></script>
+        <script src = "TrickManager.js"></script>
+        <script src = "TrickPanel.js"></script>
+        <script src = "MondPanel.js"></script>
+        <script src = "PlayPanel.js"></script>
+        <script src = "GameInfoPanel.js"></script>
+        <script src = "GameManager.js"></script>
+        <script src = "GamepadConfig.js"></script>
+        <script src = "StandardGamepad.js"></script>
+        <script src = "InputManager.js"></script>
+        <script src = "PageManager.js"></script>
+        <script src = "InterruptibleTimeout.js"></script>
+        <script src = "InterruptibleInterval.js"></script>
+        <script src = "IBGM.js"></script>
+        <script src = "MusicManager.js"></script>
+        
+        <script>
+            let pm;
+            window.onload = async () =>{
+                const setting = await getSetting();
+                const trickSetting = await getTrickSetting();
+                pm = new PageManager(setting, trickSetting);
+                pm.pageStart();
+            }
+
+            async function getSetting(){
+                const response = await fetch("./PlayFieldSetting.json");
+                const json = await response.json();
+                return json;
+            }
+
+            async function getTrickSetting(){
+                const response = await fetch("./TrickSetting.json", {
+                    "cache" : "no-store"
+                });
+                const json = await response.json();
+                return json;
+            }
+
+        </script>
+        
+    </body>
+    
+</html>

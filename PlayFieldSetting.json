@@ -1,0 +1,38 @@
+{
+
+    "width" : 9,
+    "height" : 20,
+    "hiddenHeight" : 18,
+    "displayMargin" : 0.5,
+    "resolution" : 2,
+    "canvasColor" : "#111111",
+    "verticalGridWidth" : 2,
+    "verticalGridColor" : "#444444",
+    "holizontalGridWidth" : 0,
+    "holizontalGridColor" : "#444444",
+    "mondBorderWidth" : 2,
+    "mondBorderColor" : "#888888",
+    "ghostMondBorderColor" : "#444444",
+    "initialX" : 8,
+    "initialY" : 19,
+    "mondColor" : {
+        "neutral" : "#AAAAAA",
+        "L" : "#FF0000",
+        "J" : "#FA7800",
+        "p" : "#FFFF00",
+        "q" : "#00FF00",
+        "U" : "#0000FF",
+        "I" : "#880088"
+    },
+    "ghostMondColor" : {
+        "neutral" : "#AAAAAA",
+        "L" : "#440000",
+        "J" : "#3E1E00",
+        "p" : "#444400",
+        "q" : "#004400",
+        "U" : "#000044",
+        "I" : "#220022"
+    },
+    "createMondPanels" : true
+    
+}

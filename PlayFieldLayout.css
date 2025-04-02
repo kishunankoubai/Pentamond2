@@ -1,0 +1,54 @@
+.base{
+
+    background-color: rgb(201, 255, 201);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+    border-top: 0px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    border-left: 1px solid lightgreen;
+    border-right: 1px solid lightgreen;
+
+}
+
+.canvasLayerBase{
+
+    height: 90%;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+.canvasLayer{
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    
+}
+
+.canvas{
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.mondBlock{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
