@@ -44,7 +44,7 @@ class PageManager {
     //ページが読み込まれてからstartをまだ押していないならtrue
     firstStart = true;
     //デバッグ用
-    debug = true;
+    debug = false;
 
     constructor(setting, trickSetting) {
         this.pentamondBase = document.getElementById("pentamondBase");
@@ -595,6 +595,7 @@ class PageManager {
             p.gameInfoPanel.setSize();
         }
 
+        //開始時の演出をする
         this.setCanOperate(false);
         const startEffectPanel = document.getElementById("startEffectPanel");
         startEffectPanel.style.zIndex = "1000";
@@ -623,6 +624,7 @@ class PageManager {
                 if (count < countString.length) {
                     countDown();
                 } else {
+                    //ゲームを開始する
                     startEffectPanel.style.zIndex = "-1";
                     startEffectBackground.style.zIndex = "-1";
                     this.gameManager.start();
@@ -717,6 +719,7 @@ class PageManager {
             };
         }
 
+        //buttonのse
         for (const button of document.getElementsByClassName("button")) {
             if (button.classList.contains("returnButton")) {
                 button.addEventListener("click", () => {
@@ -750,6 +753,7 @@ class PageManager {
                 this.setSubPage(1);
             };
         }
+
         for (const musicSettingSelector of document.getElementsByClassName("musicSettingSelector")) {
             musicSettingSelector.onchange = () => {
                 if (musicSettingSelector.dataset.index == "1") {

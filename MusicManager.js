@@ -1,13 +1,23 @@
 class MusicManager {
-    fadingBgm = [];
+    //現在流れているbgm
     nowBgm = null;
+    //現在流れているbgmのindex
     nowBgmIndex = null;
+    //bgmの内容と設定
+    //[bgmのindex][IBGM, 音量]
     bgm;
+    //seの内容と設定
+    //[seのindex][IBGM, 音量]
     se;
+    //bgmのマスターvolume
     bgmVolume = 1;
+    //seのマスターvolume
     seVolume = 1;
+    //bgm変更時のfadeoutにかかる時間(ms)
     bgmChangeDelay = 400;
+    //操作可能かどうかを設定できるfunction
     setCanOperate = (canOperate) => {};
+    //onプロパティ
     on = {
         setBgm: () => {},
         playSe: () => {},
@@ -15,6 +25,7 @@ class MusicManager {
 
     MusicManager() {}
 
+    //音楽ファイルをすべて読み込む
     async readMusics() {
         this.bgm = [
             [new IBGM("BGM/無音.m4a", { loop: true }), 1],
@@ -51,21 +62,17 @@ class MusicManager {
         await Promise.all(this.se.map((s) => s[0].fetch()));
     }
 
+    //bgmを変更する
+    //bgmChangeDelayの分だけ時間がかかる
     async setBgm(index) {
         this.setCanOperate(false);
+        //再生中ならfadeoutさせる
         if (this.nowBgm != null) {
-            this.fadingBgm.push(this.nowBgm);
             await this.nowBgm.fade(0, this.bgmChangeDelay).then(async () => {
                 await this.nowBgm.reset();
-                this.fadingBgm = this.fadingBgm.filter((fbgm) => fbgm != this.nowBgm);
                 this.nowBgm = null;
                 this.nowBgmIndex = null;
             });
-        }
-        if (this.fadingBgm.includes(this.bgm[index])) {
-            this.bgm[index][0].cancelFading();
-            await this.bgm[index][0].reset();
-            this.fadingBgm = this.fadingBgm.filter((fbgm) => fbgm != this.bgm[index][0]);
         }
         this.nowBgm = this.bgm[index][0];
         this.nowBgmIndex = index;
@@ -77,6 +84,7 @@ class MusicManager {
         console.log("bgm was set " + index);
     }
 
+    //seを再生する
     playSe(index) {
         this.se[index][0].audio.currentTime = 0;
         this.se[index][0].setVolume(this.se[index][1] * this.seVolume);
@@ -84,6 +92,8 @@ class MusicManager {
         this.on.playSe();
     }
 
+    //bgmVolumeを変更する
+    //この変更は保持される
     changeBgmVolume(bgmVolume) {
         this.bgmVolume = bgmVolume;
         if (this.nowBgm != null) {
@@ -92,6 +102,8 @@ class MusicManager {
         console.log("bgm volume was changed to " + this.bgm[this.nowBgmIndex][1] * this.bgmVolume);
     }
 
+    //bgmVolumeを本来の音量から割合で一時的に変更する
+    //この変更は保持されない
     changeBgmVolumeTemporarily(magnification) {
         if (this.nowBgm != null) {
             this.nowBgm.fade(this.bgm[this.nowBgmIndex][1] * this.bgmVolume * magnification, 10);
