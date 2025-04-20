@@ -1,4 +1,4 @@
-.preparingDamageAnimation{
+.preparingDamageAnimation {
     animation-direction: alternate;
     animation-duration: 1s;
     animation-name: preparingDamageBlinking;
@@ -6,7 +6,7 @@
     animation-iteration-count: infinite;
 }
 
-.waitingDamageAnimation{
+.waitingDamageAnimation {
     animation-direction: alternate;
     animation-duration: 1s;
     animation-name: waitingDamageBlinking;
@@ -14,7 +14,7 @@
     animation-iteration-count: infinite;
 }
 
-.crushAnimation{
+.crushAnimation {
     animation-direction: normal;
     animation-duration: 2s;
     animation-name: crush;
@@ -22,7 +22,7 @@
     animation-fill-mode: forwards;
 }
 
-.dangerousAnimation{
+.dangerousAnimation {
     animation-direction: alternate;
     animation-duration: 1s;
     animation-name: dangerousBlinking;
@@ -30,7 +30,7 @@
     animation-iteration-count: infinite;
 }
 
-.shakeAnimation{
+.shakeAnimation {
     animation-direction: alternate;
     animation-duration: 80ms;
     animation-name: shake;
@@ -38,36 +38,58 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes preparingDamageBlinking{
-    50%{
+.lineCompleteAnimation {
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-name: lineComplete;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes preparingDamageBlinking {
+    50% {
         background-color: rgb(255, 255, 136);
         border-color: rgb(255, 229, 101);
     }
 }
 
-@keyframes waitingDamageBlinking{
-    50%{
-         background-color: lightcoral;
-         border-color: rgb(205, 93, 93);
+@keyframes waitingDamageBlinking {
+    50% {
+        background-color: lightcoral;
+        border-color: rgb(205, 93, 93);
     }
 }
 
-@keyframes crush{
-    100%{
+@keyframes crush {
+    100% {
         opacity: 0;
         margin-top: 30%;
         rotate: 30deg;
     }
 }
 
-@keyframes dangerousBlinking{
-    50%{
+@keyframes dangerousBlinking {
+    50% {
         background-color: rgb(64, 0, 0);
-   }
+    }
 }
 
-@keyframes shake{
-    15%{
+@keyframes shake {
+    15% {
         margin-top: 3%;
+    }
+}
+
+@keyframes lineComplete {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 136, 0);
+    }
+    50% {
+        box-shadow: 0px 0px 10px 10px rgba(255, 255, 136, 0.6);
+        background-color: rgb(255, 227, 136);
+        border-color: rgb(255, 219, 101);
+    }
+    100% {
+        box-shadow: 0px 0px 20px 20px rgba(255, 255, 136, 0);
     }
 }

@@ -8,6 +8,8 @@ class GameManager {
     //現在のmode
     //modeの違いにより様々なゲームシステムを実現できる
     mode = 0;
+    //役の設定
+    trickSetting;
     //現在のmodeの処理内容が書かれたObject
     //MondOperatorの数だけ用意されている
     nowModeObject;
@@ -21,6 +23,8 @@ class GameManager {
     countDownRate = 500;
     //攻撃して他にダメージがいくまでの猶予
     attackDelay = 3000;
+    //LINEチャレンジの目標値
+    lineGoal = 15;
 
     //各MondOperatorのscore
     score;
@@ -91,6 +95,7 @@ class GameManager {
             this.latestTrick[i] = new TrickManager(trickSetting);
             this.prevTrick[i] = new TrickManager(trickSetting);
         }
+        this.trickSetting = trickSetting;
 
         this.initialize();
     }
@@ -316,6 +321,9 @@ class GameManager {
                     this.chain[i] = 0;
                     this.trickName[i] = "";
                     this.mm?.playSe(0);
+                    if (this.getCompleteLine(i) >= this.lineGoal) {
+                        this.playPanels[i].addAnimation("lineCompleteAnimation");
+                    }
                 },
                 spinRight: () => {
                     this.mm?.playSe(1);
@@ -329,6 +337,9 @@ class GameManager {
                 unPut: () => {
                     this.score[i] -= 10;
                     this.mm?.playSe(5);
+                    if (this.getCompleteLine(i) < this.lineGoal) {
+                        this.playPanels[i].removeAnimation("lineCompleteAnimation");
+                    }
                 },
                 pause: () => {},
                 reopen: () => {},
@@ -437,7 +448,7 @@ class GameManager {
                 }
                 break;
             case 2:
-                this.winner = this.mondOperators.map((_, i) => i).filter((i) => this.line[i] == 15);
+                this.winner = this.mondOperators.map((_, i) => i).filter((i) => this.line[i] == this.lineGoal);
                 if (this.winner.length != 0) {
                     finishList = this.mondOperators.filter((_, i) => !this.winner.includes(i));
                     console.log(finishList);
@@ -603,6 +614,18 @@ class GameManager {
     kill(index) {
         this.penalty[index] = Infinity;
         this.mm?.playSe(15);
+    }
+
+    getCompleteLine(index) {
+        let screenLine = 0;
+        const temporarilyTrickManager = new TrickManager(this.trickSetting);
+        for (let i = 0; i < this.mondOperators[index].bm.height; i++) {
+            temporarilyTrickManager.setContents(this.mondOperators[index].bm.getContentsOfLine(i));
+            if (temporarilyTrickManager.getIndex() == 0 || temporarilyTrickManager.getIndex() == 1) {
+                screenLine++;
+            }
+        }
+        return screenLine + this.line[index];
     }
 
     //onプロパティをObjectにより設定する

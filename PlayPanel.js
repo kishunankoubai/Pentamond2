@@ -1,5 +1,4 @@
-class PlayPanel{
-
+class PlayPanel {
     /*
     PlayPanelは、要素としてのplayPanelの高さに合わせて、その内部にPlayField、nextPanel、holdPanelなどを
     いい感じに配置する
@@ -36,7 +35,7 @@ class PlayPanel{
     next = 4;
     animations = [];
 
-    constructor(setting){
+    constructor(setting) {
         //PlayFieldおよびnextPanel、holdPanelを表示するPlayPanelを作成する
         this.playPanel = document.createElement("div");
         this.playPanel.className = "playPanel";
@@ -79,10 +78,10 @@ class PlayPanel{
         this.nextLabel.className = "mondInfoLabel nextLabel";
         this.nextLabel.innerText = "NEXT";
         this.nextInfoPanel.appendChild(this.nextLabel);
-    
-        //nextPanelを取得する    
-        this.nextPanels = this.pf.getMondOperator().nextPanels.map((np) => (np.getBase()));
-        for(let i = 0; i < this.next; i++){
+
+        //nextPanelを取得する
+        this.nextPanels = this.pf.getMondOperator().nextPanels.map((np) => np.getBase());
+        for (let i = 0; i < this.next; i++) {
             this.nextInfoPanel.appendChild(this.nextPanels[i]);
         }
 
@@ -93,12 +92,12 @@ class PlayPanel{
     }
 
     //このPlayPanelを取得する
-    getPlayPanel(){
+    getPlayPanel() {
         return this.playPanel;
     }
 
     //このPlayPanelのidを設定する
-    setID(id){
+    setID(id) {
         this.id = id;
         this.playPanel.id = id;
     }
@@ -106,10 +105,10 @@ class PlayPanel{
     //表示を最適化する
     //DOMに追加した後、サイズ変更があった場合などはこれを呼ばないと解像度が落ちたり表示が乱れる
     //setSizeも自動的に実行する
-    adjustPlayPanel(){
+    adjustPlayPanel() {
         this.pf.adjustPlayField();
         this.pf.getMondOperator().holdPanel.adjustMondPanel();
-        for(const np of this.pf.getMondOperator().nextPanels){
+        for (const np of this.pf.getMondOperator().nextPanels) {
             np.adjustMondPanel();
         }
         this.setSize();
@@ -117,36 +116,39 @@ class PlayPanel{
 
     //PlayPanel内の一部の要素を他の要素のサイズに追従させる
     //DOMに追加した後、サイズ変更があった場合などはこれを呼ばないとレイアウトが崩れる
-    setSize(){
+    setSize() {
         this.holdInfoPanel.style.width = this.playFieldBase.clientHeight / 5 + "px";
-        for(const label of document.getElementsByClassName("mondInfoLabel")){
+        for (const label of document.getElementsByClassName("mondInfoLabel")) {
             label.style.fontSize = this.playFieldBase.clientHeight / 30 + "px";
         }
         this.gameInfoPanel.setSize();
     }
 
     //animationを実現する用のclassNameを追加する
-    addAnimation(type){
-        if(this.animations.includes(type)){
+    addAnimation(type) {
+        if (this.animations.includes(type)) {
             return;
         }
         this.animations.push(type);
-        switch(type){
+        switch (type) {
             case "crushAnimation":
                 this.mondInfoPanel.className = this.mondInfoPanel.className + " " + type;
-                this.playFieldBase.className = this.playFieldBase.className + " " + type; 
+                this.playFieldBase.className = this.playFieldBase.className + " " + type;
                 break;
             case "preparingDamageAnimation":
-                this.playFieldBase.className = this.playFieldBase.className + " " + type; 
+                this.playFieldBase.className = this.playFieldBase.className + " " + type;
                 break;
             case "waitingDamageAnimation":
-                this.playFieldBase.className = this.playFieldBase.className + " " + type; 
+                this.playFieldBase.className = this.playFieldBase.className + " " + type;
                 break;
             case "dangerousAnimation":
                 this.pf.canvasLayerBase.className = this.pf.canvasLayerBase.className + " " + type;
                 break;
             case "shakeAnimation":
-                this.playFieldBase.className = this.playFieldBase.className + " " + type; 
+                this.playFieldBase.className = this.playFieldBase.className + " " + type;
+                break;
+            case "lineCompleteAnimation":
+                this.playFieldBase.className = this.playFieldBase.className + " " + type;
                 break;
         }
         console.log(type + " was added");
@@ -154,23 +156,31 @@ class PlayPanel{
 
     //animationを実現する用のclassNameを削除する
     //空文字を指定するとすべて削除する
-    removeAnimation(type){
-        if(!this.animations.includes(type) && type != ""){
+    removeAnimation(type) {
+        if (!this.animations.includes(type) && type != "") {
             return;
         }
-        this.animations = this.animations.filter((a) => (a != type));
-        if(type == ""){
-            this.playFieldBase.className = "base playFieldBase"; 
+        this.animations = this.animations.filter((a) => a != type);
+        if (type == "") {
+            this.playFieldBase.className = "base playFieldBase";
             this.pf.canvasLayerBase.className = "canvasLayerBase";
             this.mondInfoPanel.className = "mondInfoPanel";
             this.animations = [];
             console.log("all animations were removed");
-        }else{
-            this.playFieldBase.className = this.playFieldBase.className.split(" ").filter((name) => (name != type)).join(" "); 
-            this.pf.canvasLayerBase.className = this.pf.canvasLayerBase.className.split(" ").filter((name) => (name != type)).join(" ");
-            this.mondInfoPanel.className = this.mondInfoPanel.className.split(" ").filter((name) => (name != type)).join(" ");
+        } else {
+            this.playFieldBase.className = this.playFieldBase.className
+                .split(" ")
+                .filter((name) => name != type)
+                .join(" ");
+            this.pf.canvasLayerBase.className = this.pf.canvasLayerBase.className
+                .split(" ")
+                .filter((name) => name != type)
+                .join(" ");
+            this.mondInfoPanel.className = this.mondInfoPanel.className
+                .split(" ")
+                .filter((name) => name != type)
+                .join(" ");
             console.log(type + " was removed");
         }
     }
-
 }
